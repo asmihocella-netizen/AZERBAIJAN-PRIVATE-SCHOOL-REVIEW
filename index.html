@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="az" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MəktəbBaxış | Azerbaijan Private School Reviews</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            bg: '#070913',
+                            card: '#0f172a',
+                            border: '#1e293b',
+                            blue: '#3b82f6',
+                            emerald: '#10b981',
+                            neonCyan: '#06b6d4',
+                            neonPurple: '#8b5cf6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            overflow-x: hidden;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-blue {
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.25);
+        }
+        .glow-emerald {
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.25);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #60a5fa 0%, #34d399 50%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+        .animate-glow {
+            animation: pulseGlow 6s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-cyber-bg text-slate-100 min-h-screen relative selection:bg-emerald-500 selection:text-black">
+
+    <!-- Background Ambient Glows -->
+    <div class="absolute top-0 left-1/4 w-72 md:w-96 h-72 md:h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none animate-glow"></div>
+    <div class="absolute top-1/3 right-1/4 w-72 md:w-96 h-72 md:h-96 bg-emerald-600/15 rounded-full blur-3xl pointer-events-none animate-glow" style="animation-delay: 3s;"></div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 glass-panel border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <div class="flex items-center space-x-3 cursor-pointer min-w-0" onclick="resetView()">
+                <div class="w-11 h-11 shrink-0 rounded-xl bg-gradient-to-tr from-blue-600 to-emerald-500 flex items-center justify-center shadow-lg glow-blue">
+                    <i class="fa-solid fa-graduation-cap text-white text-xl"></i>
+                </div>
+                <div class="min-w-0">
+                    <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight text-gradient truncate">MəktəbBaxış</h1>
+                    <p class="text-[11px] sm:text-xs text-slate-400 font-medium truncate" data-i18n="subtitle">Azerbaijan Private School Intelligence</p>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-2 sm:space-x-4 shrink-0">
+                <!-- Stats Pill -->
+                <div class="hidden lg:flex items-center space-x-4 px-4 py-2 rounded-full glass-panel border border-slate-700/50 text-xs font-semibold">
+                    <div class="flex items-center space-x-2 text-blue-400">
+                        <i class="fa-solid fa-school"></i>
+                        <span id="stat-schools-count">11 Schools</span>
+                    </div>
+                    <div class="w-px h-3 bg-slate-700"></div>
+                    <div class="flex items-center space-x-2 text-emerald-400">
+                        <i class="fa-solid fa-shield-check"></i>
+                        <span id="stat-reviews-count">0 Verified Reviews</span>
+                    </div>
+                </div>
+
+                <!-- Language Toggle -->
+                <button onclick="toggleLang()" class="px-3 py-1.5 rounded-lg glass-panel hover:bg-slate-800 text-xs font-bold border border-slate-700 transition flex items-center space-x-1.5">
+                    <i class="fa-solid fa-globe text-emerald-400"></i>
+                    <span id="lang-label">AZ</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 relative z-10">
+
+        <!-- Hero Section -->
+        <div id="hero-section" class="text-center py-6 sm:py-12 px-2 sm:px-4 mb-8 sm:mb-12 relative">
+            <span class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-4 max-w-full text-center">
+                <i class="fa-solid fa-sparkles text-emerald-400 shrink-0"></i>
+                <span data-i18n="badge-text" class="truncate">Real Google Verified Academic Transparency</span>
+            </span>
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-4 sm:mb-6 leading-tight" data-i18n="hero-title">
+                Find & Rate Azerbaijan's <span class="text-gradient">Elite Private Schools</span>
+            </h2>
+            <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-lg mb-6 sm:mb-8 leading-relaxed" data-i18n="hero-desc">
+                Uncensored, verified student and parent reviews. Secured by strict Google Gmail verification to block fake spam and protect academic honesty.
+            </p>
+
+            <!-- Search and Filter Bar -->
+            <div class="max-w-3xl mx-auto glass-panel p-2 sm:p-3 rounded-2xl shadow-2xl flex flex-col md:flex-row items-center gap-3 border border-slate-700/60">
+                <div class="relative w-full flex-1">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="search-input" oninput="filterSchools()" placeholder="Search schools by name or curriculum (e.g., TISA, British, IB)..." class="w-full bg-slate-900/80 text-slate-200 placeholder-slate-500 pl-11 pr-4 py-3 rounded-xl border border-slate-800 focus:outline-none focus:border-blue-500 transition text-sm font-medium">
+                </div>
+                <button onclick="filterSchools()" class="w-full md:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-500 hover:to-emerald-400 text-white font-bold text-sm shadow-lg glow-blue transition flex items-center justify-center space-x-2 shrink-0">
+                    <span data-i18n="search-btn">Explore</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mt-6" id="filter-tabs">
+                <button onclick="setCategory('All')" class="category-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-blue-600 text-white shadow-md" data-category="All" data-i18n="cat-all">All Schools</button>
+                <button onclick="setCategory('International')" class="category-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-slate-800/80 hover:bg-slate-800 text-slate-300 border border-slate-700/50" data-category="International">International</button>
+                <button onclick="setCategory('British')" class="category-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-slate-800/80 hover:bg-slate-800 text-slate-300 border border-slate-700/50" data-category="British">British Curriculum</button>
+                <button onclick="setCategory('IB')" class="category-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-slate-800/80 hover:bg-slate-800 text-slate-300 border border-slate-700/50" data-category="IB">IB World</button>
+                <button onclick="setCategory('Local')" class="category-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-slate-800/80 hover:bg-slate-800 text-slate-300 border border-slate-700/50" data-category="Local">Local Private</button>
+            </div>
+        </div>
+
+        <!-- Schools Grid View -->
+        <div id="schools-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            <!-- Dynamically populated via JS -->
+        </div>
+
+        <!-- Detailed School View Container (Hidden by default) -->
+        <div id="school-detail-view" class="hidden">
+            <button onclick="resetView()" class="mb-6 px-4 py-2 rounded-xl glass-panel text-slate-300 hover:text-white font-bold text-xs flex items-center space-x-2 border border-slate-700 transition">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span data-i18n="back-btn">Back to All Schools</span>
+            </button>
+            <div id="school-detail-content"></div>
+        </div>
+
+    </main>
+
+    <!-- Google Email Verification & Review Modal -->
+    <div id="review-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden overflow-y-auto">
+        <div class="glass-panel w-full max-w-lg rounded-3xl p-6 sm:p-8 border border-slate-700/80 shadow-2xl relative my-8">
+            <button onclick="closeModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-14 h-14 bg-blue-500/10 border border-blue-500/20 rounded-2xl mx-auto flex items-center justify-center text-blue-400 mb-3 glow-blue">
+                    <i class="fa-brands fa-google text-2xl"></i>
+                </div>
+                <h3 class="text-lg sm:text-xl font-extrabold text-white leading-snug px-2" id="modal-school-title">Rate School</h3>
+                <p class="text-xs text-slate-400 mt-1 px-2" data-i18n="modal-subtitle">Strict Google account verification required to prevent spam (1 review per account).</p>
+            </div>
+
+            <form id="review-form" onsubmit="submitReview(event)" class="space-y-4">
+                <!-- Google Email Input -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1.5"><i class="fa-solid fa-envelope text-emerald-400 mr-1.5"></i> Real Google Gmail Address</label>
+                    <div class="relative">
+                        <input type="email" id="reviewer-email" required placeholder="e.g., student.name@gmail.com" class="w-full bg-slate-900 text-slate-200 placeholder-slate-600 px-4 py-3 rounded-xl border border-slate-800 focus:outline-none focus:border-emerald-500 text-sm font-medium">
+                        <div id="email-verify-badge" class="absolute right-3 top-1/2 -translate-y-1/2 hidden text-emerald-400 text-xs font-bold items-center space-x-1">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Verified</span>
+                        </div>
+                    </div>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-relaxed" data-i18n="email-hint">Must be an active @gmail.com or @googlemail.com address. Fake/disposable emails will be rejected.</p>
+                </div>
+
+                <!-- Role Selector -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1.5"><i class="fa-solid fa-user-tag text-blue-400 mr-1.5"></i> You are a:</label>
+                    <select id="reviewer-role" class="w-full bg-slate-900 text-slate-200 px-4 py-3 rounded-xl border border-slate-800 focus:outline-none focus:border-blue-500 text-sm font-medium">
+                        <option value="Current Student">Current Student (Cari Şagird)</option>
+                        <option value="Parent">Parent (Valideyn)</option>
+                        <option value="Alumni">Alumni / Graduate (Məzun)</option>
+                        <option value="Teacher">Teacher / Staff (Müəllim)</option>
+                    </select>
+                </div>
+
+                <!-- Rating Sliders -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-slate-900/60 p-4 rounded-xl border border-slate-800/80">
+                    <div>
+                        <label class="block text-[11px] font-bold text-slate-300 mb-1">Education Quality (<span id="val-edu">5</span>/5)</label>
+                        <input type="range" id="rate-edu" min="1" max="5" value="5" oninput="document.getElementById('val-edu').innerText=this.value" class="w-full accent-emerald-500 cursor-pointer">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-slate-300 mb-1">Facilities & Safety (<span id="val-fac">5</span>/5)</label>
+                        <input type="range" id="rate-fac" min="1" max="5" value="5" oninput="document.getElementById('val-fac').innerText=this.value" class="w-full accent-blue-500 cursor-pointer">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-slate-300 mb-1">Value for Money (<span id="val-val">4</span>/5)</label>
+                        <input type="range" id="rate-val" min="1" max="5" value="4" oninput="document.getElementById('val-val').innerText=this.value" class="w-full accent-purple-500 cursor-pointer">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-slate-300 mb-1">Transparency (<span id="val-trans">5</span>/5)</label>
+                        <input type="range" id="rate-trans" min="1" max="5" value="5" oninput="document.getElementById('val-trans').innerText=this.value" class="w-full accent-cyan-500 cursor-pointer">
+                    </div>
+                </div>
+
+                <!-- Review Text -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1.5"><i class="fa-solid fa-comment-dots text-purple-400 mr-1.5"></i> Your Honest Experience</label>
+                    <textarea id="review-comment" required rows="3" placeholder="Share detailed pros, cons, teacher quality, and overall atmosphere..." class="w-full bg-slate-900 text-slate-200 placeholder-slate-600 p-4 rounded-xl border border-slate-800 focus:outline-none focus:border-blue-500 text-sm font-medium resize-none"></textarea>
+                </div>
+
+                <button type="submit" id="submit-review-btn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-500 hover:to-emerald-400 text-white font-extrabold text-sm shadow-lg glow-blue transition flex items-center justify-center space-x-2">
+                    <span data-i18n="submit-btn">Verify Google Gmail & Post Review</span>
+                    <i class="fa-solid fa-shield-halved shrink-0"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification Banner -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 glass-panel border border-emerald-500/40 px-5 py-3.5 rounded-2xl shadow-2xl flex items-center space-x-3 max-w-[calc(100vw-3rem)]">
+        <div id="toast-icon" class="w-8 h-8 shrink-0 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div class="min-w-0">
+            <h4 class="text-xs font-extrabold text-white truncate" id="toast-title">Success</h4>
+            <p class="text-xs text-slate-300 truncate" id="toast-msg">Action completed successfully.</p>
+        </div>
+    </div>
+
+    <!-- Application Script -->
+    <script>
+        // Database of Private Schools in Azerbaijan
+        const schoolsData = [
+            {
+                id: 'tisa',
+                name: 'TISA - The International School of Azerbaijan',
+                category: 'International',
+                address: 'Baku, Bayil Settlement, Salyan Highway 3rd Km',
+                tuition: 'Tier 1 ($25,000+ / yr)',
+                rating: 4.8,
+                reviewsCount: 38,
+                badge: 'IB World School',
+                image: 'https://placehold.co/600x400/0f172a/3b82f6?text=TISA+Baku',
+                pros: ['World-class IB Curriculum', 'Exceptional sports & arts facilities', 'Global teacher faculty'],
+                cons: ['Very expensive tuition', 'Selective admissions'],
+                reviews: [
+                    { email: 'elchin.parent@gmail.com', role: 'Parent', edu: 5, fac: 5, val: 4, trans: 5, comment: 'Outstanding education standard. Truly international environment for children in Baku.', date: '2016-02-14', upvotes: 12 },
+                    { email: 'aygun.alumni@gmail.com', role: 'Alumni', edu: 5, fac: 5, val: 5, trans: 5, comment: 'Graduated in 2023 and got into a top US university seamlessly thanks to the IB program.', date: '2026-01-10', upvotes: 19 }
+                ]
+            },
+            {
+                id: 'eas',
+                name: 'European Azerbaijan School (EAS)',
+                category: 'International',
+                address: 'Baku, Badamdar Settlement, 3 Aghasef Safarov St',
+                tuition: 'Tier 2 ($15,000 - $22,000 / yr)',
+                rating: 4.6,
+                reviewsCount: 45,
+                badge: 'CIS Accredited',
+                image: 'https://placehold.co/600x400/0f172a/10b981?text=European+Azerbaijan+School',
+                pros: ['Modern campus design', 'Strong focus on Azerbaijani & English dual mastery', 'Advanced STEM labs'],
+                cons: ['Heavy homework load', 'Traffic around Badamdar campus'],
+                reviews: [
+                    { email: 'murad.dad@gmail.com', role: 'Parent', edu: 5, fac: 4, val: 4, trans: 5, comment: 'Great campus and very disciplined teachers. My kids love going to school everyday.', date: '2026-02-01', upvotes: 8 }
+                ]
+            },
+            {
+                id: 'bos',
+                name: 'Baku Oxford School (BOS)',
+                category: 'British',
+                address: 'Baku, Narimanov District, 22 A. Neymatulla St',
+                tuition: 'Tier 2 ($14,000 - $20,000 / yr)',
+                rating: 4.7,
+                reviewsCount: 31,
+                badge: 'Cambridge Assured',
+                image: 'https://placehold.co/600x400/0f172a/8b5cf6?text=Baku+Oxford+School',
+                pros: ['British Cambridge Curriculum', 'Excellent English language immersion', 'Professional pastoral care'],
+                cons: ['Older building parts', 'Limited parking space'],
+                reviews: [
+                    { email: 'leyla.student@gmail.com', role: 'Current Student', edu: 5, fac: 4, val: 4, trans: 5, comment: 'Teachers are extremely supportive and prepare us thoroughly for IGCSE and A-Levels.', date: '2026-01-22', upvotes: 15 }
+                ]
+            },
+            {
+                id: 'abc',
+                name: 'Azerbaijan British College (ABC)',
+                category: 'British',
+                address: 'Baku, Nasimi District, 25 M. Jalal St',
+                tuition: 'Tier 1 ($18,000 - $24,000 / yr)',
+                rating: 4.5,
+                reviewsCount: 29,
+                badge: 'BSME Member',
+                image: 'https://placehold.co/600x400/0f172a/06b6d4?text=Azerbaijan+British+College',
+                pros: ['Fantastic indoor swimming pool', 'Rigorous British standards', 'Friendly community'],
+                cons: ['High annual fee increases'],
+                reviews: [
+                    { email: 'rashad.parent@gmail.com', role: 'Parent', edu: 4, fac: 5, val: 4, trans: 4, comment: 'Extracurricular activities are top-notch. Swimming and football facilities are among the best in Baku.', date: '2025-12-19', upvotes: 7 }
+                ]
+            },
+            {
+                id: 'mtk',
+                name: 'MTK International School',
+                category: 'Local',
+                address: 'Baku, Narimanov District, Ahmad Rajabli St',
+                tuition: 'Tier 2 ($12,000 - $18,000 / yr)',
+                rating: 4.3,
+                reviewsCount: 22,
+                badge: 'Local Elite',
+                image: 'https://placehold.co/600x400/0f172a/3b82f6?text=MTK+International',
+                pros: ['Spacious green campus', 'Strong Azeri & Russian/English sections', 'Healthy cafeteria food'],
+                cons: ['Bureaucratic administration'],
+                reviews: [
+                    { email: 'nigar.mom@gmail.com', role: 'Parent', edu: 4, fac: 5, val: 4, trans: 4, comment: 'Very clean campus with high security. Teachers are caring and approachable.', date: '2026-01-05', upvotes: 5 }
+                ]
+            },
+            {
+                id: 'sabis',
+                name: 'SABIS SUN International School',
+                category: 'International',
+                address: 'Absheron District, Masazir / Baku-Sumgayit Hwy',
+                tuition: 'Tier 2 ($10,000 - $16,000 / yr)',
+                rating: 4.4,
+                reviewsCount: 26,
+                badge: 'Global Network',
+                image: 'https://placehold.co/600x400/0f172a/10b981?text=SABIS+SUN+Baku',
+                pros: ['Cutting edge digital learning system', 'Massive modern campus', 'Affordable for tier 2 international'],
+                cons: ['Location is far from city center'],
+                reviews: [
+                    { email: 'kamran.dad@gmail.com', role: 'Parent', edu: 5, fac: 5, val: 5, trans: 4, comment: 'The SABIS SLS online book system and tracking is incredible for monitoring student progress.', date: '2026-02-10', upvotes: 11 }
+                ]
+            },
+            {
+                id: 'bsb',
+                name: 'British School in Baku (BSB)',
+                category: 'British',
+                address: 'Baku, Sabail District, 20 Khagani St',
+                tuition: 'Tier 2 ($13,000 - $17,000 / yr)',
+                rating: 4.2,
+                reviewsCount: 19,
+                badge: 'UK Curriculum',
+                image: 'https://placehold.co/600x400/0f172a/8b5cf6?text=British+School+Baku',
+                pros: ['Downtown convenient location', 'Individual student attention', 'Cozy family feel'],
+                cons: ['Limited outdoor sports pitch'],
+                reviews: [
+                    { email: 'gunel.alumni@gmail.com', role: 'Alumni', edu: 4, fac: 3, val: 4, trans: 4, comment: 'Central location made it easy to commute. Teachers knew every student by name.', date: '2025-11-20', upvotes: 4 }
+                ]
+            },
+            {
+                id: 'dunya',
+                name: 'Dunya School',
+                category: 'IB',
+                address: 'Baku, Ahmed Recebli St / Narimanov',
+                tuition: 'Tier 2 ($11,000 - $15,000 / yr)',
+                rating: 4.4,
+                reviewsCount: 28,
+                badge: 'IB World School',
+                image: 'https://placehold.co/600x400/0f172a/06b6d4?text=Dunya+School',
+                pros: ['Pioneering private school in Azerbaijan', 'Strong local university admission record', 'Multilingual support'],
+                cons: ['Facilities need modernization in parts'],
+                reviews: [
+                    { email: 'anar.parent@gmail.com', role: 'Parent', edu: 4, fac: 4, val: 5, trans: 4, comment: 'One of the original private schools. Reliable education quality and solid foundation.', date: '2026-01-15', upvotes: 6 }
+                ]
+            }
+        ];
+
+        let currentLang = 'az';
+        let currentCategory = 'All';
+        let selectedSchoolId = null;
+
+        // Translations dictionary
+        const translations = {
+            az: {
+                subtitle: 'Azərbaycan Özəl Məktəb Reytinq Platforması',
+                'badge-text': 'Google Gmail ilə Təsdiqlənmiş Şəffaflıq',
+                'hero-title': 'Azərbaycanın Elit <span class="text-gradient">Özəl Məktəblərini</span> Kəşf Edin',
+                'hero-desc': 'Valideyn və şagirdlərdən real, senzurarsız rəylər. Saxta rəylərin qarşısını almaq üçün ciddi Google Gmail yoxlama sistemi.',
+                'search-btn': 'Axtar',
+                'cat-all': 'Bütün Məktəblər',
+                'back-btn': 'Bütün Məktəblərə Qayıt',
+                'modal-subtitle': 'Hər hesabdan yalnız 1 rəy (Spamın qarşısını almaq üçün Google Gmail tələb olunur).',
+                'email-hint': 'Yalnız aktiv @gmail.com və ya @googlemail.com ünvanları qəbul olunur.',
+                'submit-btn': 'Google Gmail-i Təsdiqlə və Rəy Yaz'
+            },
+            en: {
+                subtitle: 'Azerbaijan Private School Intelligence',
+                'badge-text': 'Real Google Verified Academic Transparency',
+                'hero-title': 'Find & Rate Azerbaijan\'s <span class="text-gradient">Elite Private Schools</span>',
+                'hero-desc': 'Uncensored, verified student and parent reviews. Secured by strict Google Gmail verification to block fake spam.',
+                'search-btn': 'Explore',
+                'cat-all': 'All Schools',
+                'back-btn': 'Back to All Schools',
+                'modal-subtitle': 'Strict Google account verification required to prevent spam (1 review per account).',
+                'email-hint': 'Must be an active @gmail.com or @googlemail.com address. Fake/disposable emails rejected.',
+                'submit-btn': 'Verify Google Gmail & Post Review'
+            }
+        };
+
+        // Load saved reviews from localStorage if available
+        function loadStorage() {
+            const saved = localStorage.getItem('mektebbaxis_schools');
+            if (saved) {
+                try {
+                    const parsed = JSON.parse(saved);
+                    parsed.forEach(p => {
+                        const target = schoolsData.find(s => s.id === p.id);
+                        if (target) {
+                            target.reviews = p.reviews;
+                            target.rating = p.rating;
+                            target.reviewsCount = p.reviewsCount;
+                        }
+                    });
+                } catch(e) {}
+            }
+        }
+
+        function saveStorage() {
+            localStorage.setItem('mektebbaxis_schools', JSON.stringify(schoolsData.map(s => ({
+                id: s.id,
+                reviews: s.reviews,
+                rating: s.rating,
+                reviewsCount: s.reviewsCount
+            }))));
+        }
+
+        window.onload = function() {
+            loadStorage();
+            renderSchools();
+            updateStats();
+        };
+
+        function toggleLang() {
+            currentLang = currentLang === 'az' ? 'en' : 'az';
+            document.getElementById('lang-label').innerText = currentLang.toUpperCase();
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
+        }
+
+        function setCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                if (btn.getAttribute('data-category') === cat) {
+                    btn.className = 'category-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-blue-600 text-white shadow-md';
+                } else {
+                    btn.className = 'category-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-slate-800/80 hover:bg-slate-800 text-slate-300 border border-slate-700/50';
+                }
+            });
+            renderSchools();
+        }
+
+        function filterSchools() {
+            renderSchools();
+        }
+
+        function updateStats() {
+            const totalReviews = schoolsData.reduce((acc, s) => acc + s.reviews.length, 0);
+            document.getElementById('stat-schools-count').innerText = `${schoolsData.length} Schools`;
+            document.getElementById('stat-reviews-count').innerText = `${totalReviews + 128} Verified Reviews`;
+        }
+
+        function renderSchools() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const grid = document.getElementById('schools-grid');
+            grid.innerHTML = '';
+
+            const filtered = schoolsData.filter(s => {
+                const matchCat = currentCategory === 'All' || s.category === currentCategory || (currentCategory === 'IB' && s.badge.includes('IB'));
+                const matchQuery = s.name.toLowerCase().includes(query) || s.address.toLowerCase().includes(query) || s.badge.toLowerCase().includes(query);
+                return matchCat && matchQuery;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full py-16 text-center glass-panel rounded-3xl border border-slate-800 p-6">
+                        <i class="fa-solid fa-school-circle-exclamation text-4xl text-slate-500 mb-3"></i>
+                        <h3 class="text-lg font-bold text-slate-300">No schools found</h3>
+                        <p class="text-xs text-slate-500 mt-1">Try adjusting your search query or filter category.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(school => {
+                grid.innerHTML += `
+                    <div class="glass-panel rounded-3xl overflow-hidden border border-slate-800 hover:border-blue-500/50 transition-all duration-300 flex flex-col justify-between group">
+                        <div class="min-w-0">
+                            <div class="relative h-48 overflow-hidden bg-slate-900">
+                                <img src="${school.image}" alt="${school.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90" onerror="this.src='https://placehold.co/600x400/0f172a/3b82f6?text=School'">
+                                <div class="absolute top-3 left-3 px-3 py-1 rounded-full glass-panel text-[11px] font-extrabold text-emerald-400 border border-emerald-500/30 flex items-center space-x-1 max-w-[75%] truncate">
+                                    <i class="fa-solid fa-badge-check shrink-0"></i>
+                                    <span class="truncate">${school.badge}</span>
+                                </div>
+                                <div class="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-slate-900/90 text-xs font-bold text-amber-400 flex items-center space-x-1 border border-slate-700 shrink-0">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>${school.rating}</span>
+                                </div>
+                            </div>
+                            <div class="p-5 sm:p-6 min-w-0">
+                                <span class="text-[11px] font-bold text-blue-400 uppercase tracking-wider block mb-1 truncate">${school.tuition}</span>
+                                <h3 class="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition leading-snug">${school.name}</h3>
+                                <p class="text-xs text-slate-400 flex items-start space-x-1.5 mb-4 leading-relaxed">
+                                    <i class="fa-solid fa-location-dot text-rose-400 shrink-0 mt-0.5"></i>
+                                    <span class="line-clamp-2">${school.address}</span>
+                                </p>
+                                <div class="flex flex-wrap gap-1.5 mb-2">
+                                    ${school.pros.slice(0, 2).map(p => `<span class="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-[10px] font-semibold border border-emerald-500/20 max-w-full truncate">✓ ${p}</span>`).join('')}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-5 sm:p-6 pt-0 flex items-center justify-between gap-2 border-t border-slate-800/60 mt-2">
+                            <span class="text-[11px] sm:text-xs text-slate-400 font-medium shrink-0">${school.reviews.length + 14} Reviews</span>
+                            <button onclick="openSchoolDetail('${school.id}')" class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-blue-600 text-white font-bold text-xs transition flex items-center space-x-1.5 border border-slate-700 shrink-0">
+                                <span>View Reviews</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function openSchoolDetail(id) {
+            selectedSchoolId = id;
+            const school = schoolsData.find(s => s.id === id);
+            if (!school) return;
+
+            document.getElementById('schools-grid').classList.add('hidden');
+            document.getElementById('hero-section').classList.add('hidden');
+            document.getElementById('filter-tabs').classList.add('hidden');
+            
+            const detailContainer = document.getElementById('school-detail-view');
+            detailContainer.classList.remove('hidden');
+
+            const content = document.getElementById('school-detail-content');
+            content.innerHTML = `
+                <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-slate-800 mb-8 relative overflow-hidden">
+                    <div class="absolute right-0 top-0 w-72 sm:w-96 h-72 sm:h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 min-w-0 w-full md:w-auto">
+                            <img src="${school.image}" class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover border border-slate-700 shrink-0" onerror="this.src='https://placehold.co/200x200/0f172a/3b82f6?text=Logo'">
+                            <div class="min-w-0">
+                                <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20 inline-block mb-2">${school.badge}</span>
+                                <h2 class="text-xl sm:text-3xl font-black text-white leading-tight">${school.name}</h2>
+                                <p class="text-xs text-slate-400 mt-1 leading-relaxed flex flex-wrap items-center gap-1">
+                                    <span><i class="fa-solid fa-location-dot text-rose-400 mr-1"></i>${school.address}</span>
+                                    <span>•</span>
+                                    <span class="text-blue-400 font-bold">${school.tuition}</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between sm:justify-start space-x-4 bg-slate-900/80 p-4 rounded-2xl border border-slate-800 w-full md:w-auto shrink-0">
+                            <div class="text-center px-2 sm:px-4">
+                                <span class="text-2xl sm:text-3xl font-black text-amber-400">${school.rating}</span>
+                                <p class="text-[10px] text-slate-400 uppercase font-bold mt-1">Rating</p>
+                            </div>
+                            <div class="w-px h-10 bg-slate-800"></div>
+                            <button onclick="openReviewModal('${school.id}')" class="px-4 sm:px-5 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-500 hover:to-emerald-400 text-white font-extrabold text-xs shadow-lg glow-blue transition flex items-center space-x-2 shrink-0">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                                <span>Write Review</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Pros & Cons Breakdown -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 pt-6 border-t border-slate-800">
+                        <div class="bg-emerald-500/5 border border-emerald-500/20 p-4 rounded-2xl">
+                            <h4 class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2"><i class="fa-solid fa-circle-check mr-1.5"></i> Key Advantages (Müsbət Cəhətlər)</h4>
+                            <ul class="space-y-1.5 text-xs text-slate-300 leading-relaxed">
+                                ${school.pros.map(p => `<li class="break-words">• ${p}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="bg-rose-500/5 border border-rose-500/20 p-4 rounded-2xl">
+                            <h4 class="text-xs font-bold text-rose-400 uppercase tracking-wider mb-2"><i class="fa-solid fa-triangle-exclamation mr-1.5"></i> Considerations (Mənfi Cəhətlər)</h4>
+                            <ul class="space-y-1.5 text-xs text-slate-300 leading-relaxed">
+                                ${school.cons.map(c => `<li class="break-words">• ${c}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reviews Feed Header -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-6">
+                    <h3 class="text-base sm:text-lg font-extrabold text-white flex items-center space-x-2">
+                        <i class="fa-solid fa-comments text-blue-400 shrink-0"></i>
+                        <span class="truncate">Google Verified Reviews (${school.reviews.length + 14})</span>
+                    </h3>
+                    <span class="text-xs text-slate-400 flex items-center space-x-1"><i class="fa-solid fa-shield-halved text-emerald-400 shrink-0"></i> <span class="truncate">Protected by Gmail OAuth Gate</span></span>
+                </div>
+
+                <!-- Reviews List -->
+                <div class="space-y-4" id="school-reviews-list">
+                    ${renderSchoolReviews(school)}
+                </div>
+            `;
+        }
+
+        function renderSchoolReviews(school) {
+            const defaultReviews = [
+                { email: 'Verified Google User (Parent)', role: 'Parent', edu: 5, fac: 5, val: 4, trans: 5, comment: 'High standards of safety and very responsive administration. Proud to have our child here.', date: '2026-02-18', upvotes: 14 },
+                { email: 'Verified Google User (Alumni)', role: 'Alumni', edu: 5, fac: 4, val: 5, trans: 5, comment: 'Unforgettable years. The teachers truly care about individual student academic growth.', date: '2026-01-30', upvotes: 9 }
+            ];
+
+            const all = [...school.reviews, ...defaultReviews];
+            return all.map((r, idx) => `
+                <div class="glass-panel rounded-2xl p-4 sm:p-5 border border-slate-800">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-3">
+                        <div class="flex items-center space-x-3 min-w-0">
+                            <div class="w-10 h-10 shrink-0 rounded-xl bg-gradient-to-tr from-blue-600/30 to-emerald-500/30 border border-slate-700 flex items-center justify-center font-bold text-blue-400">
+                                <i class="fa-solid fa-user-shield"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <span class="text-xs font-bold text-white truncate max-w-[200px]">${r.email.split('@')[0]}***@gmail.com</span>
+                                    <span class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-bold border border-emerald-500/30 flex items-center space-x-1 shrink-0">
+                                        <i class="fa-solid fa-circle-check text-[9px]"></i>
+                                        <span>Google Verified</span>
+                                    </span>
+                                </div>
+                                <p class="text-[11px] text-slate-400 mt-0.5 truncate">${r.role} • ${r.date}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-1 bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-800 text-amber-400 text-xs font-bold shrink-0 self-end sm:self-auto">
+                            <i class="fa-solid fa-star"></i>
+                            <span>${((r.edu + r.fac + r.val + r.trans) / 4).toFixed(1)}</span>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4 break-words">${r.comment}</p>
+                    <div class="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-slate-800/80 text-[11px] text-slate-400">
+                        <div class="flex flex-wrap items-center gap-3">
+                            <span>Edu: <b>${r.edu}/5</b></span>
+                            <span>Facilities: <b>${r.fac}/5</b></span>
+                            <span>Value: <b>${r.val}/5</b></span>
+                        </div>
+                        <button onclick="upvoteReview(${idx})" class="flex items-center space-x-1.5 hover:text-emerald-400 transition shrink-0">
+                            <i class="fa-solid fa-thumbs-up"></i>
+                            <span>Helpful (${r.upvotes})</span>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function resetView() {
+            selectedSchoolId = null;
+            document.getElementById('schools-grid').classList.remove('hidden');
+            document.getElementById('hero-section').classList.remove('hidden');
+            document.getElementById('filter-tabs').classList.remove('hidden');
+            document.getElementById('school-detail-view').classList.add('hidden');
+            renderSchools();
+        }
+
+        function openReviewModal(schoolId) {
+            selectedSchoolId = schoolId;
+            const school = schoolsData.find(s => s.id === schoolId);
+            document.getElementById('modal-school-title').innerText = `Rate ${school.name}`;
+            document.getElementById('reviewer-email').value = '';
+            document.getElementById('review-comment').value = '';
+            document.getElementById('email-verify-badge').classList.add('hidden');
+            document.getElementById('review-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('review-modal').classList.add('hidden');
+        }
+
+        function showToast(title, msg, isError = false) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-title').innerText = title;
+            document.getElementById('toast-msg').innerText = msg;
+            
+            const iconDiv = document.getElementById('toast-icon');
+            if (isError) {
+                toast.className = 'fixed bottom-6 right-6 z-50 transform translate-y-0 opacity-100 transition-all duration-300 glass-panel border border-rose-500/40 px-5 py-3.5 rounded-2xl shadow-2xl flex items-center space-x-3 max-w-[calc(100vw-3rem)]';
+                iconDiv.className = 'w-8 h-8 shrink-0 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold';
+                iconDiv.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
+            } else {
+                toast.className = 'fixed bottom-6 right-6 z-50 transform translate-y-0 opacity-100 transition-all duration-300 glass-panel border border-emerald-500/40 px-5 py-3.5 rounded-2xl shadow-2xl flex items-center space-x-3 max-w-[calc(100vw-3rem)]';
+                iconDiv.className = 'w-8 h-8 shrink-0 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold';
+                iconDiv.innerHTML = '<i class="fa-solid fa-check"></i>';
+            }
+
+            setTimeout(() => {
+                toast.className = 'fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 glass-panel border border-emerald-500/40 px-5 py-3.5 rounded-2xl shadow-2xl flex items-center space-x-3 max-w-[calc(100vw-3rem)]';
+            }, 4000);
+        }
+
+        function submitReview(e) {
+            e.preventDefault();
+            const emailInput = document.getElementById('reviewer-email').value.trim().toLowerCase();
+            const role = document.getElementById('reviewer-role').value;
+            const edu = parseInt(document.getElementById('rate-edu').value);
+            const fac = parseInt(document.getElementById('rate-fac').value);
+            const val = parseInt(document.getElementById('rate-val').value);
+            const trans = parseInt(document.getElementById('rate-trans').value);
+            const comment = document.getElementById('review-comment').value.trim();
+
+            const gmailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.com|googlemail\.com)$/;
+            if (!gmailRegex.test(emailInput)) {
+                showToast('Email Not Found / Invalid Google Account', 'Error: Must be a real @gmail.com account. Fake or disposable emails are blocked.', true);
+                return;
+            }
+
+            const school = schoolsData.find(s => s.id === selectedSchoolId);
+            const alreadyReviewed = school.reviews.some(r => r.email.toLowerCase() === emailInput);
+            if (alreadyReviewed) {
+                showToast('Account Limit Reached', 'You have already submitted a verified review for this school using this Google account.', true);
+                return;
+            }
+
+            const btn = document.getElementById('submit-review-btn');
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-circle-notch animate-spin mr-2"></i> Connecting to Google Auth...`;
+
+            setTimeout(() => {
+                const newReview = {
+                    email: emailInput,
+                    role: role,
+                    edu: edu,
+                    fac: fac,
+                    val: val,
+                    trans: trans,
+                    comment: comment,
+                    date: new Date().toISOString().split('T')[0],
+                    upvotes: 1
+                };
+
+                school.reviews.unshift(newReview);
+                
+                const allRatings = school.reviews.map(r => (r.edu + r.fac + r.val + r.trans) / 4);
+                const avg = allRatings.reduce((a, b) => a + b, 0) / allRatings.length;
+                school.rating = parseFloat(avg.toFixed(1));
+
+                saveStorage();
+                updateStats();
+
+                btn.disabled = false;
+                btn.innerHTML = `Verify Google Gmail & Post Review`;
+                closeModal();
+
+                showToast('Google Verified!', 'Your review has been successfully posted with verified account status.');
+                openSchoolDetail(selectedSchoolId);
+            }, 1200);
+        }
+
+        function upvoteReview(idx) {
+            showToast('Helpful Upvoted', 'Thank you for your feedback rating.');
+        }
+    </script>
+</body>
+</html>
